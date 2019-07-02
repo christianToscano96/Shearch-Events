@@ -8,6 +8,12 @@ class Formulario extends Component {
         categorias : ''
       }
     
+      //si el susario grega un evento o categoria
+      obtenerDatosEvento = e => {
+          this.setState({
+              [e.target.name] : e.target.value
+          })
+      }
     render() { 
         return ( 
             <form>
@@ -23,6 +29,7 @@ class Formulario extends Component {
                                 className="uk-input uk-text-center"
                                 type="text"
                                 placeholder="Nombre de Evento o Ciudad"
+                                onChange={this.obtenerDatosEvento}
                             />
                         </div>
 
@@ -30,7 +37,9 @@ class Formulario extends Component {
                             <select
                             className="uk-select"
                             name="categorias"
+                            onChange={this.obtenerDatosEvento}
                             >
+                                <option className="uk-text-center" value="">--Selecione Categoría--</option>
                                 <CategoriasConsumer>
                                     {(value) => {
                                         return (
