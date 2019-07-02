@@ -3,27 +3,44 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 //crear el context
-const CategoriaContext = React.createContext();
+const CategoriasContext = React.createContext();
 export const CategoriasConsumer = CategoriasContext.Consumer;
 
-class CategoriasProvder extends Component {
+class CategoriasProvider extends Component {
     
-    token= '4PRETVBUDKPA5ZE3MP';
+    token= 'VPKKPTG3RP4HGWKGMDH5';
 
-    state = {  }
+    state = { 
+        categorias : []
+     }
     
     componentDidMount() {
-        this.ObtenetCategorias();
+        this.ObtenerCategorias();
     }
 
     //metodo
-    ObtenetCategorias = () => {
+    ObtenerCategorias = async () => {
+        let url = `https://www.eventbriteapi.com/v3/categories/?token=${this.token}&locale=es_ES`;
+
+        let categorias = await axios.get(url);
+
+        this.setState({
+            categorias : categorias.data.categories
+        })
 
     }
 
     render() { 
-        return (  );
+        return ( 
+            <CategoriasContext.Provider
+                value={{
+                    categorias : this.state.categorias
+                }}
+            >
+                {this.props.children}
+            </CategoriasContext.Provider>
+         );
     }
 }
  
-export default CategoriasProvder;
+export default CategoriasProvider;

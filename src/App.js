@@ -1,15 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Header from './component/Header';
+import CategoriasProvider from './context/CategoriasContext';
 
 
 function App() {
   return (
-    <Fragment>
+    <CategoriasProvider>
       <Header
         titulo="Eventos en React con EvnetBrite API"
       />
 
-    </Fragment>
+    </CategoriasProvider>
   );
 }
 
