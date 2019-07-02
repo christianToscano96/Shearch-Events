@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Header from './component/Header';
 
 
 function App() {
   return (
-    <h1>hola</h1>
+    <Fragment>
+      <Header
+        titulo="Eventos en React con EvnetBrite API"
+      />
+
+    </Fragment>
   );
 }
 
