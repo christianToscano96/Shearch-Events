@@ -5,15 +5,15 @@ const EventosContext = React.createContext();
 export const EventosConsumer = EventosContext.Consumer;
 
 class EventosProvider extends Component {
-    token= 'VPKKPTG3RP4HGWKGMDH5';
-    ordenar='date'
+    token = 'VPKKPTG3RP4HGWKGMDH5';
+    ordenar ='date'
 
     state = { 
         eventos : []
      }
     
     obtenerEventos = async (busqueda) => {
-        let url = `https://www.eventbriteapi.com/v3/events/search/q=${busqueda.nombre}&categories=${busqueda.categorias}&sort_by=${this.ordenar}&token=${this.token}&locale=es_ES`;
+        let url = `https://www.eventbriteapi.com/v3/events/search/?q=${busqueda.nombre}&categories=${busqueda.categoria}&sort_by=${this.ordenar}&token=${this.token}&locale=es_ES`;
     
     //consultar la appi con la url
     const eventos = await axios(url);
