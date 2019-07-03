@@ -1,3 +1,13 @@
+<h1>Buscador de Eventos</h1>
+Utilizando Context Api, más Eventbrite api y Ulkit Css Framework
+
+<div align="center"> 
+     <img width="45%" src="img1.png" alt="About screen" title="About screen"> 
+     <img height="0" width="8px"> 
+     
+</div> 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
