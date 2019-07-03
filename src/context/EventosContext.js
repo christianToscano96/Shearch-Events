@@ -16,8 +16,12 @@ class EventosProvider extends Component {
         let url = `https://www.eventbriteapi.com/v3/events/search/?q=${busqueda.nombre}&categories=${busqueda.categoria}&sort_by=${this.ordenar}&token=${this.token}&locale=es_ES`;
     
     //consultar la appi con la url
-    const eventos = await axios(url);
-    console.log(eventos);
+        const eventos = await axios(url);
+       
+        //pasarlos al state
+        this.setState({
+            eventos : eventos.data.events
+        })
     }
     render() { 
         return ( 
