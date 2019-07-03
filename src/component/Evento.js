@@ -16,10 +16,10 @@ const Evento = ({evento}) => {
         }
     return ( 
         <div>
-            <div className="uk-card uk-card-default">
-                <div className="uk-card-media-top">
+            <div className="uk-card uk-card-default uk-margin-xlarg tarjeta">
+                <div className="uk-card-media-top ">
                     {evento.logo 
-                    ? <img src={evento.logo.url} alt={evento.name} />
+                    ? <img className="imagen-radio" src={evento.logo.url} alt={evento.name} />
                     : null }
                 </div>
                 

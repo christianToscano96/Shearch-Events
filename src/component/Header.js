@@ -2,9 +2,11 @@ import React from 'react';
 
 const Header = ({titulo}) => {
     return ( 
-       <header className="uk-margin" uk-margin="true">
+       <header className="uk-margin header" uk-margin="true">
+        
          <h1 className="uk-text-center">
             {titulo}
+            
          </h1>
        </header>
      );

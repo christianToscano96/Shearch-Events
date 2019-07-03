@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Header from './component/Header';
 import Formulario from './component/Formulario';
 import ListaEventos from './component/ListaEventos';
@@ -10,7 +11,7 @@ import EventosProvider from './context/EventosContext';
 function App() {
   return (
     <EventosProvider>
-      <CategoriasProvider>
+      <CategoriasProvider>     
         <Header
           titulo="Eventos en React con EvnetBrite API"
         />
